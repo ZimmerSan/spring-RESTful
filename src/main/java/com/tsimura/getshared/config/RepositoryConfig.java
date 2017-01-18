@@ -22,7 +22,7 @@ import static org.hibernate.cfg.AvailableSettings.*;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories("com.tsimura.getshared.dao")
+@EnableJpaRepositories("com.tsimura.getshared.repository")
 @PropertySource({"classpath:application.properties"})
 @ComponentScan({"com.tsimura.getshared.service"})
 public class RepositoryConfig {
@@ -73,10 +73,6 @@ public class RepositoryConfig {
         properties.setProperty(DIALECT, env.getProperty("hibernate.dialect"));
         properties.setProperty(SHOW_SQL, env.getProperty("hibernate.show_sql"));
         properties.setProperty(HBM2DDL_AUTO, env.getProperty("hibernate.hbm2ddl.auto"));
-//        properties.setProperty(USE_SECOND_LEVEL_CACHE, env.getProperty("hibernate.cache.use_second_level_cache"));
-//        properties.setProperty(CACHE_REGION_FACTORY, env.getProperty("hibernate.cache.region.factory_class"));
-//        properties.setProperty(USE_QUERY_CACHE, env.getProperty("hibernate.cache.use_query_cache"));
-//        properties.setProperty(GENERATE_STATISTICS, env.getProperty("hibernate.generate_statistics"));
 
         return properties;
     }
